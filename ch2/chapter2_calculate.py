@@ -1,8 +1,4 @@
-
-
-class Calculate(object):
-    def add(self, x, y):
-        return x + y
+from calculate import Calculate
 
 if __name__ == '__main__':
     calc = Calculate()
