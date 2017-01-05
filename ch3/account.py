@@ -6,4 +6,12 @@ class Account(object):
         self.di = data_interface
 
     def get_account(self, id_num):
-        return self.di.get(id_num)
+        try:
+            result = self.di.get(id_num)
+        except ConnectionError:
+            result = "Connection error occured. Try Again."
+        return result
+
+
+class ConnectionError(Exception):
+    pass
